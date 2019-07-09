@@ -11,7 +11,7 @@ def print_methods (obj):
 
 try:
     mydb = mysql.connector.connect(
-    host="localhost",
+    host="127.0.0.1",
     user="gweiss",
     passwd="gweiss", #os.environ['MYSQL_PW'],
     database="sys_watch"
