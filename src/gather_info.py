@@ -9,12 +9,23 @@ import mysql.connector
 def print_methods (obj):
     print ([method for method in dir(obj) if callable(getattr(obj, method))])
 
+# host = "127.0.0.1" # GCP w/ proxy
+host = "34.67.4.235" # GCP w/ public IP
+# host = "liftandshift.cqd262vxp3yt.us-west-2.rds.amazonaws.com" # AWS
+# host = "liftandshift.mysql.database.azure.com" # Azure
+# host = "localhost" # local
+
+user = "gweiss" # GCP
+# user = "gweiss" # AWS
+# user = "gweiss@liftandshift" # Azure
+# user = "gweiss" # local
+
 try:
     mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="gweiss",
-    passwd="gweiss", #os.environ['MYSQL_PW'],
-    database="sys_watch"
+    host = host,
+    user = user,
+    passwd = os.environ['MYSQL_PW'],
+    database = "sys_watch"
     )
 except:
     print("Couldn't connect to the database.")
