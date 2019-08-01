@@ -11,14 +11,9 @@ def print_methods (obj):
 
 # host = "127.0.0.1" # GCP w/ proxy
 host = "34.67.4.235" # GCP w/ public IP
-# host = "liftandshift.cqd262vxp3yt.us-west-2.rds.amazonaws.com" # AWS
-# host = "liftandshift.mysql.database.azure.com" # Azure
 # host = "localhost" # local
 
-user = "gweiss" # GCP
-# user = "gweiss" # AWS
-# user = "gweiss@liftandshift" # Azure
-# user = "gweiss" # local
+user = "gweiss"
 
 try:
     mydb = mysql.connector.connect(
